@@ -10,9 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: '#26364a',
-        plum: '#76516f',
-        teal: '#527f7c',
+        navy: '#1f3a5c',
+        plum: '#814679',
+        teal: '#3e847f',
         ivory: '#f4f1ec',
       },
       fontFamily: {
