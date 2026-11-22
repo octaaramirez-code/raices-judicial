@@ -5,26 +5,27 @@
 /* ─────────────────────────────────────────────────────────────────────────────
    RAÍCES — Red de Acompañamiento Integral contra el Acoso en Sede Judicial.
    Rebranding: tema claro sobre marfil.
-   Paleta: Azul petróleo #26364A · Ciruela #76516F · Verde petróleo #527F7C · Marfil #F4F1EC
+   Paleta (con intensidad subida): Azul #1F3A5C · Ciruela #814679 · Verde petróleo #3E847F · Marfil #F4F1EC
    Tipografías: Montserrat (títulos y destacados) + Work Sans (textos y cuerpo)
    ───────────────────────────────────────────────────────────────────────────── */
 
 :root {
-  --navy: #26364a;
-  --plum: #76516f;
-  --plum-strong: #5f3f59;
-  --teal: #527f7c;
+  /* Colores con un poco más de intensidad que la guía original (menos pastel). */
+  --navy: #1f3a5c;
+  --plum: #814679;
+  --plum-strong: #683662;
+  --teal: #3e847f;
 
   --bg: #f4f1ec;
   --surface: #fbf9f6;
   --surface-2: #ece7df;
-  --ink: #26364a;
-  --gray: #46556a;
-  --faint: #66727f;
+  --ink: #1f3a5c;
+  --gray: #3f526c;
+  --faint: #5f6f80;
   --border: #ded8cd;
   --border-strong: #c7bfb2;
-  --accent: #76516f;
-  --accent-strong: #5f3f59;
+  --accent: #814679;
+  --accent-strong: #683662;
   --on-accent: #fbf9f6;
   --exit: #b3453a;
   --exit-strong: #983a30;

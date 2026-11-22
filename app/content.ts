@@ -7,7 +7,7 @@
 
 export const profile = {
   name: 'RAÍCES',
-  fullName: 'Red de Acompañamiento Integral contra el Acoso en Sede Judicial',
+  fullName: 'Red Argentina de Acompañamiento Integral contra el Acoso en Sede Judicial',
   tagline: 'Espacio de contención, asesoramiento y red de resguardo para integrantes del Poder Judicial.',
 
   // Isologo (escudo + balanza + raíces) con fondo transparente, para el header y el hero.
@@ -17,7 +17,7 @@ export const profile = {
 
   // COMPLETAR: URL final una vez deployado en Vercel.
   siteUrl: 'https://raices-judicial.vercel.app',
-  title: 'RAÍCES — Red de Acompañamiento Integral contra el Acoso en Sede Judicial',
+  title: 'RAÍCES — Red Argentina de Acompañamiento Integral contra el Acoso en Sede Judicial',
   description:
     'Espacio seguro, confidencial y multidisciplinario de contención, asesoramiento y acompañamiento integral a integrantes del Poder Judicial que atraviesan situaciones de acoso y violencia laboral.',
 }
@@ -31,26 +31,43 @@ export const quickExit = {
 }
 
 export const mission =
-  'Brindar un espacio seguro, confidencial y multidisciplinario de contención, asesoramiento y acompañamiento integral a integrantes del Poder Judicial que atraviesan situaciones de acoso y violencia laboral. Promovemos la protección de sus derechos fundamentales a través del rigor técnico-jurídico, la perspectiva de género y la articulación de estrategias colectivas que garanticen la integridad, la dignidad y el ejercicio justo de la función judicial.'
+  'Brindar un espacio seguro, confidencial e interdisciplinario de contención, orientación y acompañamiento integral a quienes integran el Poder Judicial y atraviesan situaciones de acoso, violencia laboral o institucional. Promover la protección de sus derechos fundamentales mediante el rigor técnico-jurídico, la perspectiva de género y los estándares nacionales e internacionales de derechos humanos, impulsando estrategias individuales y colectivas que contribuyan a garantizar la dignidad, la integridad y el ejercicio justo de la función judicial.'
 
 export const vision =
-  'Ser una red de referencia e impacto dentro del ámbito judicial, reconocida por su independencia, transparencia y excelencia en la erradicación del acoso laboral. Aspiramos a consolidar entornos de trabajo libres de violencia y arbitrariedad, impulsando transformaciones culturales e institucionales que fortalezcan la justicia interna, la equidad de género y el debido resguardo de quienes integran el sistema de justicia.'
+  'Consolidarnos como una red de referencia en el ámbito judicial, reconocida por su independencia, transparencia y compromiso con la erradicación de la violencia institucional y el acoso laboral. Promover entornos laborales libres de violencia y arbitrariedad, impulsando transformaciones institucionales basadas en la justicia, la equidad de género y el respeto por la dignidad humana. Proyectarnos a nivel nacional e internacional, conforme a los estándares de derechos humanos y mediante la articulación con redes y organismos especializados.'
 
 export const independencia =
   'RAÍCES no depende jerárquicamente de los órganos de gobierno del Poder Judicial. Esta independencia es la garantía de un acompañamiento imparcial, confidencial y libre de injerencias.'
 
 /* ── Quiénes somos ────────────────────────────────────────────────────────────
-   COMPLETAR: cuando definan si publican nombres y fotos, reemplazar este
-   array por el detalle real del equipo. Por ahora son roles genéricos. */
+   COMPLETAR: cuando definan si publican nombres y fotos, se puede sumar el
+   detalle real del equipo. Por ahora se presentan por rol. */
 export const nosotrosIntro =
-  'RAÍCES está integrada por un equipo multidisciplinario con trayectoria en el ámbito judicial. Por motivos de seguridad y a pedido de quienes lo requieran, la identidad de algunas integrantes se mantiene resguardada — lo que no resguardamos es el compromiso técnico y humano con cada consulta.'
+  'Somos un grupo de funcionarias, exfuncionarias y trabajadores del Poder Judicial, con amplia trayectoria y experiencia en los ámbitos judicial y ejecutivo, y especialización en derechos humanos, género, violencia por motivos de género, violencia institucional y violencia laboral. Contamos con profesionales especializados en salud mental y discapacidad, y promovemos un abordaje interdisciplinario que contempla la perspectiva de género, la inclusión, la accesibilidad y la protección integral de los derechos. Nuestro compromiso es acompañar a quienes integran el sistema judicial, atendiendo también las consecuencias que las distintas formas de violencia pueden generar en su salud mental, bienestar e integridad psicosocial, desde un enfoque respetuoso de la dignidad humana y de los estándares nacionales e internacionales de derechos humanos.'
 
-export const equipo = [
-  { rol: 'Magistradas', d: 'Perspectiva institucional y jurisdiccional sobre el funcionamiento interno del Poder Judicial.' },
-  { rol: 'Abogadas', d: 'Asesoramiento legal general y acompañamiento en la articulación de estrategias.' },
-  { rol: 'Abogadas penalistas', d: 'Evaluación de encuadres penales cuando la situación lo requiere.' },
-  { rol: 'Psicólogas', d: 'Contención emocional y acompañamiento terapéutico durante el proceso.' },
-]
+export const magistradas = {
+  rol: 'Magistradas',
+  d: 'Aportan una perspectiva institucional y jurisdiccional sobre la organización, el funcionamiento interno y las dinámicas propias del Poder Judicial, contribuyendo a la comprensión de sus estructuras, prácticas y desafíos institucionales.',
+}
+
+export const equiposInterdisciplinarios = {
+  rol: 'Equipos interdisciplinarios',
+  d: 'Integrados por abogadas, psicólogas y psicólogas sociales.',
+  miembros: [
+    {
+      rol: 'Abogadas',
+      d: 'Asesoramiento y orientación jurídica personalizada, situada y conforme al marco normativo y los estándares de protección de derechos vigentes en cada jurisdicción.',
+    },
+    {
+      rol: 'Psicólogas',
+      d: 'Contención y acompañamiento psicológico, evaluaciones de riesgo y valoración del impacto de las situaciones de violencia laboral, institucional y mobbing (acoso psicológico laboral) en la salud mental. Identificación de indicadores de afectación emocional y psicológica, contención, orientación y derivación especializada cuando corresponda.',
+    },
+    {
+      rol: 'Psicólogas sociales',
+      d: 'Acompañamiento psicosocial, análisis de las dinámicas vinculares, grupales e institucionales, identificación de factores de vulnerabilidad y fortalecimiento de redes de apoyo. Diseño de estrategias de intervención de los vínculos y la integración social.',
+    },
+  ],
+}
 
 /* ── Canal de denuncias / solicitud de ayuda ─────────────────────────────── */
 export const ayudaIntro =
@@ -75,15 +92,20 @@ export const garantias = [
   { t: 'Conexión segura', d: 'El sitio y el formulario funcionan bajo HTTPS, con la información protegida en tránsito.' },
   { t: 'Botón de salida rápida', d: 'Disponible en todo momento para cerrar la página de forma inmediata.' },
   { t: 'Independencia jerárquica', d: 'RAÍCES no depende de los órganos de gobierno judicial, lo que garantiza imparcialidad.' },
-  { t: 'Marcos normativos', d: 'Adhesión a instrumentos de derechos humanos y perspectiva de género, incluyendo el Convenio 190 de la OIT.' },
+  {
+    t: 'Marco normativo',
+    d: 'Fundamentada en la Constitución Nacional, los tratados internacionales de derechos humanos y la normativa nacional, provincial y específica de cada Poder Judicial. Comprende leyes orgánicas, reglamentos, acordadas y protocolos institucionales vinculados con la protección de derechos, la prevención de la violencia laboral e institucional, la perspectiva de género, la igualdad y la discapacidad. Asimismo, adoptamos como referencia los estándares internacionales establecidos por la CEDAW, la Convención de Belém do Pará, la Convención sobre los Derechos de las Personas con Discapacidad y el Convenio 190 de la OIT.',
+    wide: true,
+  },
 ]
 
-/* ── Protocolos y recursos ───────────────────────────────────────────────
+/* ── Recursos ────────────────────────────────────────────────────────────
    COMPLETAR: reemplazar "href" por el link real cuando suban cada documento
    (podés subir PDFs a /public y apuntar a "/nombre-archivo.pdf"). */
 export const recursos = [
   { t: 'Modelo de nota de solicitud de acompañamiento', d: 'Formato de referencia para iniciar una consulta por escrito.', href: '' },
-  { t: 'Convenio 190 de la OIT', d: 'Convenio sobre la violencia y el acoso en el mundo del trabajo.', href: '' },
+  // COMPLETAR: confirmar la descripción del Pacto de confidencialidad.
+  { t: 'Pacto de confidencialidad', d: 'Compromiso de reserva y confidencialidad sobre la información compartida por quienes consultan.', href: '' },
   { t: 'Normativa aplicable', d: 'Compilación de leyes y reglamentos vigentes sobre acoso laboral en el Poder Judicial.', href: '' },
   { t: 'Jurisprudencia relevante', d: 'Antecedentes y fallos de referencia en casos de acoso y violencia laboral.', href: '' },
 ]

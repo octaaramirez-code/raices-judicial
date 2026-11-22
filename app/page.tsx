@@ -4,13 +4,13 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import {
   profile, quickExit, mission, vision, independencia,
-  nosotrosIntro, equipo, ayudaIntro, confidencialidad, formUrl, contactEmail,
+  nosotrosIntro, magistradas, equiposInterdisciplinarios, ayudaIntro, confidencialidad, formUrl, contactEmail,
   garantias, recursos, faq, footerNote,
 } from './content'
 
 // ── Reveal ────────────────────────────────────────────────────────────────────
 
-function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function Reveal({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
   useEffect(() => {
@@ -21,7 +21,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
     return () => obs.disconnect()
   }, [])
   return (
-    <div ref={ref} className={`reveal${inView ? ' in' : ''}`} style={{ transitionDelay: `${delay}ms` }}>
+    <div ref={ref} className={`reveal${inView ? ' in' : ''}${className ? ` ${className}` : ''}`} style={{ transitionDelay: `${delay}ms` }}>
       {children}
     </div>
   )
@@ -71,7 +71,7 @@ export default function Home() {
   }, [doExit])
 
   useEffect(() => {
-    const ids = ['inicio', 'nosotros', 'ayuda', 'protocolos', 'faq']
+    const ids = ['inicio', 'nosotros', 'ayuda', 'recursos', 'faq']
     const els = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[]
     if (!els.length) return
     const obs = new IntersectionObserver(
@@ -88,7 +88,7 @@ export default function Home() {
   const navItems = [
     { id: 'nosotros', label: 'Quiénes somos' },
     { id: 'ayuda', label: 'Solicitar ayuda' },
-    { id: 'protocolos', label: 'Protocolos' },
+    { id: 'recursos', label: 'Recursos' },
     { id: 'faq', label: 'Preguntas frecuentes' },
   ]
 
@@ -134,7 +134,7 @@ export default function Home() {
 
               <div className="flex flex-wrap items-center gap-3">
                 <a href="#ayuda" className="btn btn-solid">Solicitar acompañamiento</a>
-                <a href="#protocolos" className="btn">Conocer protocolos</a>
+                <a href="#recursos" className="btn">Guía de recursos</a>
               </div>
             </div>
 
@@ -177,15 +177,29 @@ export default function Home() {
           <Reveal>
             <p className="text-[16px] leading-[1.75] max-w-[62ch] mb-9" style={{ color: 'var(--gray)' }}>{nosotrosIntro}</p>
           </Reveal>
-          <div className="grid md:grid-cols-2 gap-5">
-            {equipo.map((e, i) => (
-              <Reveal key={e.rol} delay={(i % 4) * 45}>
-                <div className="card px-6 py-6 h-full">
-                  <p className="h-card mb-2">{e.rol}</p>
-                  <p className="text-[15px] leading-[1.6]" style={{ color: 'var(--gray)' }}>{e.d}</p>
-                </div>
-              </Reveal>
-            ))}
+          <Reveal>
+            <div className="card px-6 py-6">
+              <p className="h-card mb-2">{magistradas.rol}</p>
+              <p className="text-[15px] leading-[1.7] max-w-[80ch]" style={{ color: 'var(--gray)' }}>{magistradas.d}</p>
+            </div>
+          </Reveal>
+
+          <div className="mt-12">
+            <Reveal>
+              <div className="brand-rule mb-5" />
+              <p className="h-card mb-2" style={{ fontSize: 22 }}>{equiposInterdisciplinarios.rol}</p>
+              <p className="text-[15.5px] leading-[1.7] mb-6" style={{ color: 'var(--gray)' }}>{equiposInterdisciplinarios.d}</p>
+            </Reveal>
+            <div className="grid xl:grid-cols-3 gap-5">
+              {equiposInterdisciplinarios.miembros.map((m, i) => (
+                <Reveal key={m.rol} delay={i * 60}>
+                  <div className="card px-6 py-6 h-full">
+                    <p className="h-card mb-2" style={{ fontSize: 18 }}>{m.rol}</p>
+                    <p className="text-[14.5px] leading-[1.7]" style={{ color: 'var(--gray)' }}>{m.d}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </Section>
 
@@ -226,20 +240,20 @@ export default function Home() {
           <Reveal>
             <p className="label mb-8">Seguridad y garantías institucionales</p>
           </Reveal>
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-3 gap-5">
             {garantias.map((g, i) => (
-              <Reveal key={g.t} delay={(i % 4) * 45}>
+              <Reveal key={g.t} delay={(i % 4) * 45} className={g.wide ? 'md:col-span-3' : ''}>
                 <div className="card px-6 py-6 h-full">
                   <p className="h-card mb-2" style={{ fontSize: 18 }}>{g.t}</p>
-                  <p className="text-[15px] leading-[1.6]" style={{ color: 'var(--gray)' }}>{g.d}</p>
+                  <p className="text-[15px] leading-[1.7]" style={{ color: 'var(--gray)' }}>{g.d}</p>
                 </div>
               </Reveal>
             ))}
           </div>
         </section>
 
-        {/* ── Protocolos y recursos ── */}
-        <Section id="protocolos" n="04" title="Protocolos y recursos">
+        {/* ── Recursos ── */}
+        <Section id="recursos" n="04" title="Recursos">
           <div className="space-y-1">
             {recursos.map((r, i) => (
               <Reveal key={r.t} delay={(i % 5) * 40}>
