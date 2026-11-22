@@ -106,10 +106,10 @@ export default function Home() {
       >
         <div className="max-w-[1180px] mx-auto px-6 h-20 flex items-center justify-between gap-6">
           <a href="#inicio" className="flex items-center gap-3">
-            <Image src={profile.logo} alt="" width={36} height={36} className="rounded-md" />
-            <span className="serif text-[16px] font-semibold tracking-[0.01em]">{profile.name}</span>
+            <Image src={profile.logo} alt="" width={32} height={38} className="h-[38px] w-auto" priority />
+            <span className="serif text-[20px] font-extrabold tracking-[0.02em]" style={{ color: 'var(--navy)' }}>{profile.name}</span>
           </a>
-          <div className="hidden md:flex items-center gap-7 text-[13px] tracking-[0.03em] uppercase font-medium">
+          <div className="hidden md:flex items-center gap-7 text-[12.5px] tracking-[0.06em] uppercase font-semibold font-display">
             {navItems.map((n) => (
               <a key={n.id} href={`#${n.id}`} className={`dim${active === n.id ? ' nav-on' : ''}`}>{n.label}</a>
             ))}
@@ -124,18 +124,22 @@ export default function Home() {
 
         {/* ── Hero ── */}
         <section id="inicio" className="relative pt-16 md:pt-24 pb-14 md:pb-20 overflow-hidden">
-          <div className="deco-circle hidden md:block" style={{ width: 620, height: 620, top: -260, right: -220 }} />
-          <div className="deco-circle hidden md:block" style={{ width: 420, height: 420, top: -100, right: 60, borderColor: 'color-mix(in srgb, var(--accent) 30%, transparent)' }} />
+          <div className="grid md:grid-cols-[minmax(0,1fr)_300px] gap-x-12 gap-y-10 items-center">
+            <div className="rise relative max-w-[760px]">
+              <p className="label mb-5">Red de Acompañamiento Integral</p>
+              <h1 className="name mb-6">{profile.name}</h1>
+              <div className="brand-rule mb-6" />
+              <p className="quote mb-4">{profile.fullName}</p>
+              <p className="lead max-w-[620px] mb-10">{profile.tagline}</p>
 
-          <div className="rise relative max-w-[760px]">
-            <p className="label mb-5">Red de Acompañamiento Integral</p>
-            <h1 className="name mb-7">{profile.name}</h1>
-            <p className="quote mb-4">{profile.fullName}</p>
-            <p className="lead max-w-[620px] mb-10">{profile.tagline}</p>
+              <div className="flex flex-wrap items-center gap-3">
+                <a href="#ayuda" className="btn btn-solid">Solicitar acompañamiento</a>
+                <a href="#protocolos" className="btn">Conocer protocolos</a>
+              </div>
+            </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <a href="#ayuda" className="btn btn-solid">Solicitar acompañamiento</a>
-              <a href="#protocolos" className="btn">Conocer protocolos</a>
+            <div className="rise hidden md:flex justify-center" style={{ animationDelay: '120ms' }} aria-hidden>
+              <Image src={profile.logo} alt="" width={300} height={355} className="w-[260px] h-auto" priority />
             </div>
           </div>
         </section>
@@ -277,7 +281,8 @@ export default function Home() {
 
       </main>
 
-      <footer className="border-t" style={{ borderColor: 'var(--border)' }}>
+      <footer>
+        <div className="brand-band" aria-hidden />
         <div className="max-w-[1180px] mx-auto px-6 py-10">
           <p className="text-[14px] leading-[1.7] max-w-[62ch] mb-6" style={{ color: 'var(--faint)' }}>{footerNote}</p>
           <div className="flex flex-wrap items-center justify-between gap-3">

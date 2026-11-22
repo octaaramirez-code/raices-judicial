@@ -10,7 +10,10 @@ export const profile = {
   fullName: 'Red de Acompañamiento Integral contra el Acoso en Sede Judicial',
   tagline: 'Espacio de contención, asesoramiento y red de resguardo para integrantes del Poder Judicial.',
 
-  logo: '/logo.png',
+  // Isologo (escudo + balanza + raíces) con fondo transparente, para el header y el hero.
+  logo: '/logo-mark.png',
+  // Logo completo con nombre y bajada, para redes (Open Graph).
+  logoFull: '/logo.png',
 
   // COMPLETAR: URL final una vez deployado en Vercel.
   siteUrl: 'https://raices-judicial.vercel.app',

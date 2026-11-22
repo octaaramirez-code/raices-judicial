@@ -4,25 +4,33 @@
 
 /* ─────────────────────────────────────────────────────────────────────────────
    RAÍCES — Red de Acompañamiento Integral contra el Acoso en Sede Judicial.
-   Paleta navy/índigo tomada del isologo (escudo + balanza + raíces),
-   tipografía sobria (Source Serif 4 + Inter). Tema oscuro fijo.
+   Rebranding: tema claro sobre marfil.
+   Paleta: Azul petróleo #26364A · Ciruela #76516F · Verde petróleo #527F7C · Marfil #F4F1EC
+   Tipografías: Montserrat (títulos y destacados) + Work Sans (textos y cuerpo)
    ───────────────────────────────────────────────────────────────────────────── */
 
 :root {
-  --bg: #0c0a28;
-  --surface: #14113f;
-  --surface-2: #1c1852;
-  --ink: #f5f6fc;
-  --gray: #b9bce0;
-  --faint: #7d80ac;
-  --border: #2a2664;
-  --border-strong: #3c3880;
-  --accent: #9fb0f2;
-  --accent-strong: #cdd6ff;
-  --exit: #e35d4f;
-  --exit-strong: #ef7264;
+  --navy: #26364a;
+  --plum: #76516f;
+  --plum-strong: #5f3f59;
+  --teal: #527f7c;
+
+  --bg: #f4f1ec;
+  --surface: #fbf9f6;
+  --surface-2: #ece7df;
+  --ink: #26364a;
+  --gray: #46556a;
+  --faint: #66727f;
+  --border: #ded8cd;
+  --border-strong: #c7bfb2;
+  --accent: #76516f;
+  --accent-strong: #5f3f59;
+  --on-accent: #fbf9f6;
+  --exit: #b3453a;
+  --exit-strong: #983a30;
+  --shadow: 0 1px 2px rgba(38, 54, 74, 0.05), 0 10px 28px -14px rgba(38, 54, 74, 0.16);
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html { scroll-behavior: smooth; }
@@ -30,7 +38,7 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--bg);
   color: var(--ink);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-work-sans), system-ui, sans-serif;
   font-size: 17px;
   font-weight: 400;
   line-height: 1.6;
@@ -38,30 +46,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-::selection { background: var(--accent); color: #0c0a28; }
+::selection { background: var(--plum); color: var(--on-accent); }
 
-a:focus-visible, button:focus-visible {
-  outline: 1px solid var(--accent);
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--teal);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
-.serif { font-family: var(--font-source-serif), Georgia, serif; }
+.serif { font-family: var(--font-montserrat), system-ui, sans-serif; }
 
 /* ── Type scale ────────────────────────────────────────────────────────────── */
 
 .name {
-  font-family: var(--font-source-serif), Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(48px, 8vw, 100px);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(44px, 7.4vw, 92px);
   line-height: 1.02;
-  letter-spacing: 0.01em;
-  color: var(--ink);
+  letter-spacing: 0.005em;
+  color: var(--navy);
 }
 
 .h-section {
-  font-family: var(--font-source-serif), Georgia, serif;
-  font-weight: 600;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 700;
   font-size: clamp(28px, 3.2vw, 40px);
   line-height: 1.18;
   letter-spacing: -0.005em;
@@ -69,10 +77,11 @@ a:focus-visible, button:focus-visible {
 }
 
 .h-card {
-  font-family: var(--font-source-serif), Georgia, serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
   font-weight: 600;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 1.3;
+  color: var(--navy);
 }
 
 .lead {
@@ -82,26 +91,27 @@ a:focus-visible, button:focus-visible {
 }
 
 .quote {
-  font-family: var(--font-source-serif), Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(20px, 2.2vw, 27px);
+  font-family: var(--font-work-sans), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(19px, 2.1vw, 25px);
   line-height: 1.45;
   color: var(--ink);
 }
 
 .label {
-  font-size: 13px;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
 .idx {
-  font-size: 12.5px;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--faint);
 }
@@ -112,36 +122,51 @@ a:focus-visible, button:focus-visible {
   color: var(--faint);
 }
 
+/* Línea de marca: ciruela → verde petróleo */
+.brand-rule {
+  width: 168px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--plum) 0 50%, var(--teal) 50% 100%);
+}
+
+/* Franja tricolor de cierre */
+.brand-band {
+  height: 6px;
+  background: linear-gradient(90deg, var(--navy) 0 33.33%, var(--plum) 33.33% 66.66%, var(--teal) 66.66% 100%);
+}
+
 @media (max-width: 767px) {
-  .h-section { font-size: 27px; }
-  .h-card { font-size: 19px; }
+  .h-section { font-size: 26px; }
+  .h-card { font-size: 18px; }
   .lead { font-size: 17px; }
-  .quote { font-size: 20px; }
+  .quote { font-size: 19px; }
 }
 
 /* ── Components ────────────────────────────────────────────────────────────── */
 
 .btn {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   height: 50px;
-  padding: 0 26px;
-  border-radius: 4px;
+  padding: 0 28px;
+  border-radius: 999px;
   border: 1px solid var(--border-strong);
-  color: var(--ink);
+  color: var(--navy);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
   transition: border-color 150ms var(--ease), background 150ms var(--ease), color 150ms var(--ease);
 }
-.btn:hover { background: var(--surface-2); border-color: var(--accent); }
+.btn:hover { background: var(--surface-2); border-color: var(--plum); }
 
-.btn-solid { background: var(--accent); color: #0c0a28; border-color: var(--accent); font-weight: 600; }
-.btn-solid:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: #0c0a28; }
+.btn-solid { background: var(--plum); color: var(--on-accent); border-color: var(--plum); }
+.btn-solid:hover { background: var(--plum-strong); border-color: var(--plum-strong); color: var(--on-accent); }
 
 .btn-exit {
+  font-family: var(--font-montserrat), sans-serif;
   height: 38px;
   padding: 0 16px;
   border-radius: 20px;
@@ -165,24 +190,18 @@ a:focus-visible, button:focus-visible {
   text-decoration-color: var(--border-strong);
   transition: text-decoration-color 150ms var(--ease);
 }
-.u:hover { text-decoration-color: var(--accent); }
+.u:hover { text-decoration-color: var(--plum); }
 
 .dim { color: var(--gray); transition: color 150ms var(--ease); }
-.dim:hover { color: var(--accent); }
+.dim:hover { color: var(--plum); }
 
 .rule { border-top: 1px solid var(--border); }
 
 .card {
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   background: var(--surface);
-}
-
-.deco-circle {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid var(--border-strong);
-  pointer-events: none;
+  box-shadow: var(--shadow);
 }
 
 /* Native <details> FAQ accordion */
@@ -210,9 +229,9 @@ a:focus-visible, button:focus-visible {
 }
 
 .row-hover { transition: background 160ms var(--ease), padding-left 160ms var(--ease); }
-.row-hover:hover { background: var(--surface-2); padding-left: 14px; border-radius: 8px; }
+.row-hover:hover { background: var(--surface-2); padding-left: 14px; border-radius: 10px; }
 
-.nav-on { color: var(--ink); }
+.nav-on { color: var(--plum); }
 
 @media (prefers-reduced-motion: reduce) {
   .row-hover:hover { padding-left: 0; }

@@ -1,18 +1,19 @@
 import type { Metadata } from 'next'
-import { Source_Serif_4, Inter } from 'next/font/google'
+import { Montserrat, Work_Sans } from 'next/font/google'
 import './globals.css'
 import { profile } from './content'
 
-const sourceSerif = Source_Serif_4({
-  variable: '--font-source-serif',
+// Rebranding: Montserrat para títulos y destacados, Work Sans para textos y cuerpo.
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
   subsets: ['latin'],
-  weight: ['500', '600', '700'],
+  weight: ['500', '600', '700', '800'],
 })
 
-const inter = Inter({
-  variable: '--font-inter',
+const workSans = Work_Sans({
+  variable: '--font-work-sans',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600'],
 })
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     siteName: profile.name,
     locale: 'es_AR',
     type: 'website',
+    images: [{ url: profile.logoFull, width: 1024, height: 1024, alt: profile.name }],
   },
 }
 
@@ -36,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${sourceSerif.variable} ${inter.variable} antialiased`}>
+      <body className={`${montserrat.variable} ${workSans.variable} antialiased`}>
         {children}
       </body>
     </html>
